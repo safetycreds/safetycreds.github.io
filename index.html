@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SafetyCreds — Safe behaviour, rewarded</title>
+  <meta name="description" content="SafetyCreds tracks the safety behaviour of subscribing users and turns it into credits redeemable as insurance benefits with partnering insurers. Site under construction." />
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-soft: #101a2e;
+      --card: rgba(255, 255, 255, 0.04);
+      --border: rgba(255, 255, 255, 0.09);
+      --text: #e8edf6;
+      --muted: #9fb0c9;
+      --accent: #3ddc97;
+      --accent-2: #4ea1ff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+      background:
+        radial-gradient(1100px 600px at 85% -10%, rgba(78, 161, 255, 0.16), transparent 60%),
+        radial-gradient(900px 500px at 0% 110%, rgba(61, 220, 151, 0.12), transparent 60%),
+        var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 48px 24px;
+    }
+    main { max-width: 860px; width: 100%; text-align: center; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 36px;
+    }
+    .badge .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 1.8s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(61, 220, 151, 0.6); }
+      50% { box-shadow: 0 0 0 7px rgba(61, 220, 151, 0); }
+    }
+
+    .shield {
+      width: 84px; height: 84px;
+      margin: 0 auto 24px;
+      display: block;
+      filter: drop-shadow(0 8px 30px rgba(61, 220, 151, 0.35));
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 6vw, 3.6rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+    h1 .grad {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .tagline {
+      font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 44px;
+      line-height: 1.65;
+    }
+    .tagline strong { color: var(--text); font-weight: 600; }
+
+    .loop {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-bottom: 44px;
+      text-align: left;
+    }
+    .step {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 18px;
+    }
+    .step .num {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      border: 1px solid rgba(61, 220, 151, 0.35);
+      border-radius: 6px;
+      padding: 2px 8px;
+      margin-bottom: 10px;
+      letter-spacing: 0.06em;
+    }
+    .step h3 { font-size: 1rem; margin-bottom: 6px; font-weight: 600; }
+    .step p { font-size: 0.88rem; color: var(--muted); line-height: 1.55; }
+
+    .construction {
+      border: 1px dashed rgba(255, 200, 87, 0.45);
+      background: rgba(255, 200, 87, 0.07);
+      color: #ffd97a;
+      border-radius: 12px;
+      padding: 14px 22px;
+      display: inline-block;
+      font-size: 0.95rem;
+      margin-bottom: 44px;
+    }
+
+    footer {
+      margin-top: auto;
+      padding-top: 40px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--accent-2); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="badge"><span class="dot"></span>Under construction</span>
+
+    <svg class="shield" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M12 2L4 5.5V11c0 5 3.4 9.4 8 10.5 4.6-1.1 8-5.5 8-10.5V5.5L12 2z"
+            fill="url(#g)" stroke="rgba(255,255,255,0.25)" stroke-width="0.6"/>
+      <path d="M8.6 12.2l2.3 2.3 4.5-4.8" stroke="#0b1220" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round"/>
+      <defs>
+        <linearGradient id="g" x1="4" y1="2" x2="20" y2="22">
+          <stop stop-color="#3ddc97"/>
+          <stop offset="1" stop-color="#4ea1ff"/>
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <h1>Safe<span class="grad">tyCreds</span></h1>
+
+    <p class="tagline">
+      SafetyCreds tracks the <strong>safety behaviour</strong> of subscribing users —
+      starting with safe driving, then healthy activity — and turns it into
+      <strong>safety credits</strong> that can be redeemed as
+      <strong>insurance benefits</strong> with partnering insurance companies.
+      Your safe behaviour, finally measured, owned by you, and rewarded.
+    </p>
+
+    <div class="loop">
+      <div class="step">
+        <span class="num">01</span>
+        <h3>Subscribe &amp; consent</h3>
+        <p>Register and choose exactly which safety signals you share. Everything is opt-in and can be paused anytime.</p>
+      </div>
+      <div class="step">
+        <span class="num">02</span>
+        <h3>Behave safely</h3>
+        <p>Drive smoothly and distraction-free, stay active, complete verified safety actions — tracked automatically.</p>
+      </div>
+      <div class="step">
+        <span class="num">03</span>
+        <h3>Earn credits</h3>
+        <p>Verified safe behaviour becomes safety credits and a personal safety score. Rewards only — never penalties.</p>
+      </div>
+      <div class="step">
+        <span class="num">04</span>
+        <h3>Claim benefits</h3>
+        <p>Redeem credits with partnering insurers for premium discounts, cashback, and wellness perks.</p>
+      </div>
+    </div>
+
+    <div class="construction">
+      This site is currently under construction — the SafetyCreds platform is in active development.
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 SafetyCreds &middot;
+    <a href="https://github.com/safetycreds" rel="noopener">github.com/safetycreds</a>
+  </footer>
+</body>
+</html>
